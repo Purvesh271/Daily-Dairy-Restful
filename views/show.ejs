@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Diary- New Entry</title>
+    <title>Daily Diary - Entry Search</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6134/6134622.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,13 +16,10 @@
     
 </head>
 <body>
-    <div class="form">
-        <form method="post" action="/posts">
-            <input placeholder="Enter Date" name="date">
-            <textarea placeholder="Enter content" name="content"></textarea>
-            <button>Submit</button>
-        </form>
+    <h2>Here is your searched entry: </h2>
+    <div class="post">
+        <h2 class="date"><%= post.date %></h2>
+        <h3 class="content"><%= post.content %></h3>
     </div>
-
 </body>
 </html>

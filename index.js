@@ -16,15 +16,18 @@ app.listen(port,()=>{
 
 let posts = [
     {
-        date:"01/04/2024",
+        id:"1a",
+        date:"01 April 2024",
         content:"Today was a great day, I got my driving liecence"
     },
     {
-        date:"02/04/2024",
+        id:"2b",
+        date:"02 April 2024",
         content:"Today I got my first internship"
     },
     {
-        date:"03/04/2024",
+        id:"3c",
+        date:"03 April 2024",
         content:"Today I learned about RestApis"
     },
 
@@ -35,7 +38,7 @@ app.get("/posts",(req,res)=>{
     res.render("index.ejs",{posts});
 });
 
-//create
+//create route (make new entry)
 app.get("/posts/new",(req,res)=>{
     res.render("new.ejs");
 });
@@ -44,4 +47,11 @@ app.post("/posts",(req,res)=>{
     let {date,content} = req.body;
     posts.push({date,content});
     res.redirect("/posts");
+});
+
+//show route (search entry by id)
+app.get("/posts/:date",(req,res)=>{
+    let {date}= req.params;
+    let post = posts.find((p)=> date === p.date);
+    res.render("show.ejs",{post});
 });
