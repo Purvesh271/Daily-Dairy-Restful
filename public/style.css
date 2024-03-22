@@ -5,6 +5,9 @@
 body{
     background-color: #A4CE95;
 }
+
+
+/*              index.ejs styling               */
 .nav{
     background-color:#5F5D9C ;
     display: flex;
@@ -35,6 +38,9 @@ h1{
 .date{
     font-style: italic;
 }
+
+
+/*              new.ejs styling                 */
 .form{
     position: fixed;
     inset: 0px;
@@ -65,4 +71,14 @@ textarea{
 button{
     padding: 6px;
     border-radius: 1rem;
+}
+
+/*              show.ejs styling                */
+.show{
+    background-color: #6196A6;
+    height: fit-content;
+    width: 32rem;
+    margin-left: 29rem;
+    padding: 1rem;
+    gap: 1rem;
 }

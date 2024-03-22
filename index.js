@@ -16,17 +16,17 @@ app.listen(port,()=>{
 
 let posts = [
     {
-        id:"1a",
+        id:"1",
         date:"01 April 2024",
         content:"Today was a great day, I got my driving liecence"
     },
     {
-        id:"2b",
+        id:"2",
         date:"02 April 2024",
         content:"Today I got my first internship"
     },
     {
-        id:"3c",
+        id:"3",
         date:"03 April 2024",
         content:"Today I learned about RestApis"
     },
@@ -50,8 +50,8 @@ app.post("/posts",(req,res)=>{
 });
 
 //show route (search entry by id)
-app.get("/posts/:date",(req,res)=>{
-    let {date}= req.params;
-    let post = posts.find((p)=> date === p.date);
+app.get("/posts/:id",(req,res)=>{
+    let {id}= req.params;
+    let post = posts.find((p)=> id === p.id);
     res.render("show.ejs",{post});
 });
