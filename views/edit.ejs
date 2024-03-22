@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Diary</title>
+    <title>Daily Diary- New Entry</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/6134/6134622.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,22 +16,14 @@
     
 </head>
 <body>
-    <div class="nav">
-        <h1>Daily Diary</h1>
-        <div class="add">
-            <i class="fa-solid fa-plus"></i>
-            <a href="http://localhost:8080/posts/new" style="text-decoration: none; color: black;">Make new entry</a>
-        </div>
+    <h1 style="padding-left: 37rem;">Edit Your Entry</h1>
+    <div class="form">
+        <h2 style="margin-bottom: 1rem;">Date: <%= post.date %></h2>
+        <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
+            <textarea placeholder="Enter content" name="content"><%= post.content %></textarea>
+            <button>Submit</button>
+        </form>
     </div>
 
-    <% for(post of posts){%>
-        <div class="post">
-            <h2 class="date"><%= post.date %></h2>
-            <h3 class="content"><%= post.content %></h3>
-            <br>
-            <a href="http://localhost:8080/posts/<%=post.id%>">See in Detail</a>
-            <a style="margin-left: 1rem ;" href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a>
-        </div>
-    <%}%>
 </body>
 </html>
