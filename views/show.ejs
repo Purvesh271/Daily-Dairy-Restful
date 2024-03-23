@@ -16,10 +16,17 @@
     
 </head>
 <body>
-    <h1 style="padding-left: 40vw;">Here is your entry: </h1>
-    <div class="show">
-        <h2 class="date"><%= post.date %></h2>
-        <h3 class="content"><%= post.content %></h3>
+    <div class="showmain">
+        <h1 >Here is your entry: </h1>
+        <div class="show">
+            <h2 class="date"><%= post.date %></h2>
+            <h3 class="content"><%= post.content %></h3>
+        </div>
+        <div class="back">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <a href="http://localhost:8080/posts">Go Back</a>
+        </div>
     </div>
+
 </body>
 </html>

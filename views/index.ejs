@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="nav">
-        <h1>Daily Diary</h1>
+        <h1 style="padding-left: 45vw;">Daily Diary</h1>
         <div class="add">
             <i class="fa-solid fa-plus"></i>
             <a href="http://localhost:8080/posts/new" style="text-decoration: none; color: black;">Make new entry</a>
@@ -29,8 +29,13 @@
             <h2 class="date"><%= post.date %></h2>
             <h3 class="content"><%= post.content %></h3>
             <br>
-            <a href="http://localhost:8080/posts/<%=post.id%>">See in Detail</a>
-            <a style="margin-left: 1rem ;" href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a>
+            <div class="opts">
+                <a href="http://localhost:8080/posts/<%=post.id%>">See in Detail</a>
+                <a href="http://localhost:8080/posts/<%=post.id%>/edit">Edit</a>
+                <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+                    <button >Delete</button>
+                </form>
+            </div>
         </div>
     <%}%>
 </body>
